@@ -7,8 +7,8 @@ import nltk
 from nltk.corpus import stopwords
 
 # Authentication Consumerprivate  Key
-CONSUMER_KEY = "89uJT3Ipc4SmJmHxqf6Omk4g6"
-CONSUMER_SECRET = "	KnWLWEjISNupiso3HBl9ZuKFzq8gYuu2dv5geZgIEZZ4EwMigq"
+CONSUMER_KEY = "	31ms3AE4VeGKbTHeNC1qFFNC6"
+CONSUMER_SECRET = "		rshwAWB4ZPQoFoSptWjFncM0lFRXryTyUk2cWbfPyYnUyzWSEi"
 
 # Authentication Access Tokens
 ACCESS_TOKEN = "1361706008-UPdrAj7w70AMA6oZItR7yMbREQxZkEGgm9IZobS"
@@ -18,7 +18,7 @@ oauth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 oauth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 api = tweepy.API(oauth)
-#######################################################################################################################
+############find#########
 def getSearch():
     user_input = raw_input("Enter the query without Hashtag: ")
 
@@ -26,15 +26,15 @@ def getSearch():
     print(hash_tag)
     tweets = api.search(q=hash_tag, count=200)
     return tweets
-##########################################################################################################################
+##############################################emotions########################################
 def test_sentiments():
     list_sents = []
     tweets = getSearch()
-    set_api_key("pIDFa4rmMonS93aFZ3ocGAW60ggqWnrhnhWsTzUtjAo")
+    set_api_key("TThKX2Pdufksc0c21dYtLvxGGx0z4YsGn4vKh7yzhCY")
     for tweet in tweets:
         list_sents.append(sentiment(tweet.text))
     return list_sents
-######################################################################################################
+#######################################locationss##################################
 def location():
     lang = {}
     loc = {}
@@ -79,7 +79,7 @@ def location():
     for k in top_lang[0:5]:
         i += 1
         print(i, k, lang[k])
-######################################################################################################
+################################################################################################
 def tweet_match():
     trump = 0
     tweets = api.user_timeline(screen_name="@realdonaldtrump", count=200, tweet_mode="extended")
